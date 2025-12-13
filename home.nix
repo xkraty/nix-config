@@ -5,12 +5,17 @@ let
   myGpgKeyId = "D8B2697C34AB583F";
 in
 {
+  home.username = "xkraty";
+  home.homeDirectory = "/home/xkraty";
   home.stateVersion = "25.11"; 
 
   home.packages = with pkgs; [
     git
+    lazygit
     gnupg
     pinentry-qt
+    btop
+    mise
   ];
   
   wayland.windowManager.hyprland = {
@@ -22,10 +27,6 @@ in
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    
-    pinentry.package = pkgs.pinentry-qt;
-    
-    maxCacheTtl = 300;
     defaultCacheTtl = 300;
   };
 
