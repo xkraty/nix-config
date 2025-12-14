@@ -12,6 +12,7 @@ in
   home.packages = with pkgs; [
     git
     lazygit
+    docker
     gnupg
     pinentry-qt
     btop

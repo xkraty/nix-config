@@ -83,12 +83,14 @@
   users.users.xkraty = {
     isNormalUser = true;
     description = "Chris";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
   };
+
+   virtualisation.docker.enable = true; 
 
   # Install firefox.
   programs.firefox.enable = true;
