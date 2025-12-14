@@ -53,6 +53,8 @@ in
    shellAliases = {
     "nr" = "sudo nixos-rebuild switch --flake ~/nix-config#nixos";
     "nu" = "nix flake update ~/nix-config"; 
+    "postgres-start" = "docker compose -f ~/dev/Docker-Postgres --project-name dev-pg -d";
+    "postgres-stop" = "docker compose -f ~/dev/Docker-Postgres --project-name dev-pg stop";
     };
   };
 
