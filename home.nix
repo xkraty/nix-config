@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   onePassPath = "~/.1password/agent.sock";
@@ -69,8 +69,9 @@ in
   programs.waybar = {
     enable = true;
     
-    config = builtins.readFile ./dotfiles/waybar/config.json;
-    # We won't add the CSS here, but you can later use:
-    # style = builtins.readFile ./dotfiles/waybar/style.css;
+    settings = {
+      main = lib.importJSON ./dotfiles/waybar/config.json;
+    };
+    style = builtins.readFile ./dotfiles/waybar/style.css;
   };
 }

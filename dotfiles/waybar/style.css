@@ -1,0 +1,31 @@
+/* General Waybar container styling */
+#waybar {
+    background-color: rgba(40, 44, 52, 0.85); /* Dark background with 85% opacity */
+    color: #f8f8f2; /* Light text color */
+    font-family: monospace;
+    font-size: 14px;
+    border-radius: 8px; /* Slightly rounded corners for the whole bar */
+}
+
+/* Base style for all modules (e.g., clock, battery, network) */
+#workspaces button,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#tray {
+    padding: 0 10px; /* Horizontal padding for modules */
+    margin: 4px 2px; /* Small vertical margin between modules and the bar edge */
+    background-color: transparent;
+}
+
+/* Style for active workspace button */
+#workspaces button.active {
+    color: #bd93f9; /* Purple color for the active workspace icon */
+}
+
+/* Style for modules when hovering */
+#pulseaudio:hover {
+    background-color: #50fa7b; /* Bright green background on hover */
+    color: #282a36;
+}
