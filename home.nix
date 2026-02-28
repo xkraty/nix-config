@@ -1,10 +1,14 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 let
   onePassPath = "~/.1password/agent.sock";
   myGpgKeyId = "D8B2697C34AB583F";
 in
 {
+  imports = [
+    inputs.caelestia-shell.homeManagerModules.default
+  ];
+
   home.username = "xkraty";
   home.homeDirectory = "/home/xkraty";
   home.stateVersion = "25.11"; 
@@ -17,6 +21,7 @@ in
     pinentry-qt
     btop
     mise
+    claude-code
   ];
   
   wayland.windowManager.hyprland = {
@@ -77,7 +82,7 @@ in
     };
     style = builtins.readFile ./dotfiles/waybar/style.css;
   };
-
+  
   programs.caelestia = {
 	  enable = true;
 	  systemd = {
