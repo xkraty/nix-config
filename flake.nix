@@ -8,13 +8,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+
     caelestia-shell = {
       url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, caelestia-shell, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, hyprland, caelestia-shell, ... }@inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };

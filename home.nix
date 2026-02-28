@@ -26,6 +26,7 @@ in
   
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     settings = {};
   };
   xdg.configFile."hypr/hyprland.conf".source = ./dotfiles/hypr/hyprland.conf;
@@ -90,17 +91,6 @@ in
 	    target = "graphical-session.target";
 	    environment = [];
 	  };
-	  settings = {
-	    bar.status = {
-	      showBattery = false;
-	    };
-	    paths.wallpaperDir = "~/Images";
-	  };
-	  cli = {
-	    enable = true; # Also add caelestia-cli to path
-	    settings = {
-	      theme.enableGtk = false;
-	    };
-	  };
+	  cli.enable = true; # Also add caelestia-cli to path
 	};
 }
