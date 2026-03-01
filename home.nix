@@ -22,6 +22,7 @@ in
     btop
     mise
     claude-code
+    localsend
   ];
   
   wayland.windowManager.hyprland = {
